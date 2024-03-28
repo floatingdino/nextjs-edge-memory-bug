@@ -6,11 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "npm run build && cp .next/standalone/server.js server.js && clinic doctor --autocannon [ http://localhost:3000 ] -- node server.js"
   },
   "dependencies": {
+    "autocannon": "^7.15.0",
+    "clinic": "^13.0.0",
+    "next": "14.1.4",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.4"
+    "react-dom": "^18"
   }
 }
